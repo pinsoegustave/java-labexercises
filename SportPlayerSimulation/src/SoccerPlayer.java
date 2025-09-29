@@ -1,8 +1,10 @@
 
-public class SoccerPlayer {
+public class SoccerPlayer extends Player{
+
+    public int scores;
 
 //  Constructor
-    public SoccerPlayer () {
+    public SoccerPlayer (String name, int energy) {
 
     }
 }

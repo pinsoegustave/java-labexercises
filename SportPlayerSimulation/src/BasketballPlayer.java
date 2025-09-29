@@ -1,6 +1,9 @@
 public class BasketballPlayer {
 
-    public BasketballPlayer() {
+    public int scores;
+
+//    Constructor
+    public BasketballPlayer(String name, int energy) {
 
     }
 }
