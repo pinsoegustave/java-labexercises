@@ -2,8 +2,8 @@
 public class House {
     public static void main(String[] args) {
 //          Create the objects
-        Bone bone  = new Bone();
-        System.out.println(bone);
+//        Bone bone  = new Bone();
+//        System.out.println(bone);
 
 
         Cat cat1 = new Cat("Whiskers");
@@ -12,12 +12,34 @@ public class House {
         Dog d1 = new Dog("Snoopy");
         Dog d2 = new Dog("Larry");
 
+        cat2.giveBone(d1);
+        cat1.giveBone(d2);
+        cat1.giveBone(d1);
+
+        d2.chew();
+        cat2.giveBone(d2);
+        d2.chew();
+        d2.chew();
+        d2.chew();
+        d2.chew();
+        d2.chew();
+        d2.chew();
+        d2.chew();
+        d2.chew();
+        d2.chew();
+        d2.chew();
+        d2.chew();
+        d2.chew();
+        d2.chew();
+
+
         System.out.println(d1);
         System.out.println(d2);
         d2.talk();
         d1.talk();
 
-        d1.receiveBone(bone);
+
+//        d1.receiveBone(bone);
 
         cat2.talk();
         cat1.talk();
@@ -27,7 +49,7 @@ public class House {
 //        bone.getChewed();
 //        bone.getChewed();
 //
-////        Display the objects
+//        Display the objects
 //        System.out.println(bone);
     }
 

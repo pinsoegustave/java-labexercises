@@ -26,4 +26,18 @@ public class Cat {
     public void talk() {
         System.out.println("Meowing!!");
     }
+
+//    This will give a bone to the dog
+    public void giveBone (Dog argDog) {
+        System.out.println(name + ": I am giving a bone to "+ argDog.getName());
+//        Create a new bone
+        Bone newBone = new Bone();
+
+//        Give the bone to the dog
+        boolean result = argDog.receiveBone(newBone);
+
+//        Gain a life
+        if (result && numLives < 9) numLives++;
+
+    }
 }
