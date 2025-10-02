@@ -12,27 +12,30 @@ public class House {
         Dog d1 = new Dog("Snoopy");
         Dog d2 = new Dog("Larry");
 
-        cat2.giveBone(d1);
-        cat1.giveBone(d2);
-        cat1.giveBone(d1);
 
-        d2.chew();
-        cat2.giveBone(d2);
-        d2.chew();
+        d1.boneGetsStolen(cat1);
+
+//        cat2.giveBone(d1);
+//        cat1.giveBone(d2);
+//        cat1.giveBone(d1);
+//
+//        d2.chew();
+//        cat2.giveBone(d2);
+//        d2.chew();
 
 
 
-        System.out.println(d1);
-        System.out.println(d2);
-        d2.talk();
-        d1.talk();
+//        System.out.println(d1);
+//        System.out.println(d2);
+//        d2.talk();
+//        d1.talk();
 
 
 //        d1.receiveBone(bone);
-
-        cat2.talk();
-        cat1.talk();
-        cat2.talk();
+//
+//        cat2.talk();
+//        cat1.talk();
+//        cat2.talk();
 
 //
 //        bone.getChewed();

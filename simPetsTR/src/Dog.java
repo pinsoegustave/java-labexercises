@@ -1,3 +1,4 @@
+import java.util.Random;
 
 public class Dog {
 //    Instance variables
@@ -55,5 +56,32 @@ public class Dog {
                 bone = null;
             }
         }
+    }
+//    This simulates the dog bitting the cat
+    public void biteCat(Cat argCat) {
+        System.out.println(name+": I am bitting "+ argCat.getArgName());
+        argCat.getBitten();
+    }
+
+    public void boneGetsStolen(Cat argCat) {
+//        Make sure the dog has a bone to steal
+        if (!hasBone) {
+            System.out.println(name+ ": I don't have a bone to give");
+            return;
+        }
+
+//        50-50 chance of success
+        Random r = new Random();
+        int chance = r.nextInt(1, 101);
+        if (chance > 50) {
+//            Success
+            hasBone = false;
+            bone = null;
+            System.out.println(name+ ": I just had my bone stolen");
+        } else {
+//            Failure
+            System.out.println(name+": I just caught "+argCat.getArgName()+ "Tryigng to check on me");
+        }
+
     }
 }
