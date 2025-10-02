@@ -19,18 +19,7 @@ public class House {
         d2.chew();
         cat2.giveBone(d2);
         d2.chew();
-        d2.chew();
-        d2.chew();
-        d2.chew();
-        d2.chew();
-        d2.chew();
-        d2.chew();
-        d2.chew();
-        d2.chew();
-        d2.chew();
-        d2.chew();
-        d2.chew();
-        d2.chew();
+
 
 
         System.out.println(d1);
