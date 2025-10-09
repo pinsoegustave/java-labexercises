@@ -84,4 +84,30 @@ public class Dog {
         }
 
     }
+
+//    The passed in cat is annoying us
+    public void getAnnoyed(Cat argCat) {
+        if (hasBone) {
+//            The dog has a bone. Bark
+            talk();
+        }
+        else {
+//            The dog doesn't have a bone
+            biteCat(argCat);
+        }
+    }
+
+    public void look() {
+        System.out.println("You see a dog named "+name);
+    }
+
+//    Examine the dog method
+    public void examine() {
+        if (hasBone) {
+            System.out.println("My name is "+name+" and I have a bone that is "+ bone.getLength()+" inches long");
+        }
+        else {
+            System.out.println("My name is "+name+" and I don't a bone, am dreaming of ...");
+        }
+    }
 }

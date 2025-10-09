@@ -1,48 +1,74 @@
+import java.util.Scanner;
 
 public class House {
     public static void main(String[] args) {
 //          Create the objects
-//        Bone bone  = new Bone();
-//        System.out.println(bone);
+        Cat player = new Cat("Garfield");
+        Dog snoppy = new Dog("Snoppy");
+        Dog simba = new Dog("Simba");
 
 
-        Cat cat1 = new Cat("Whiskers");
-        Cat cat2 = new Cat("Garfield");
+//        Welcome
+        System.out.println("Welcome to SimPets. You are a cat ");
 
-        Dog d1 = new Dog("Snoopy");
-        Dog d2 = new Dog("Larry");
+//        Main loop
+        boolean contineGame = true;
+        Scanner s = new Scanner(System.in);
+        String enteredCommand;
+
+        while (contineGame) {
+//            Prompt
+            System.out.println("Please enter a command");
+            enteredCommand = s.nextLine();
+
+//            Process the command
+            if (enteredCommand.equals("quit")) {
+                contineGame = false;
+            } else if (enteredCommand.equals("look")) {
+                player.look();
+                snoppy.look();
+                simba.look();
+            } else if (enteredCommand.equals("examine garfield")) {
+                player.examine();
+            } else if (enteredCommand.equals("examine snoopy")) {
+                snoppy.examine();
+            } else if (enteredCommand.equals("examine simba")) {
+                simba.examine();
+            } else if (enteredCommand.equals("talk")) {
+                player.talk();
+            } else if (enteredCommand.equals("annoy snoppy")) {
+                player.annoyDog(snoppy);
+            } else if (enteredCommand.equals("annoy simba")) {
+                player.annoyDog(simba);
+            } else if (enteredCommand.equals("give bone to snoppy")) {
+                player.giveBone(snoppy);
+            } else if (enteredCommand.equals("give bone to simba")) {
+                player.giveBone(simba);
+            } else if (enteredCommand.equals("steal bone from snoopy")) {
+                player.stealBone(snoppy);
+            } else if (enteredCommand.equals("steal bone from simba")) {
+                player.stealBone(simba);
+            }
+            else {
+                System.out.println("Invalid command");
+            }
+
+//            Each dog should chew their bone at the end of a turn
+            snoppy.chew();
+            simba.chew();
 
 
-        d1.boneGetsStolen(cat1);
+//            Check for a loss
+            if (player.getNumLives() == 0) {
+                System.out.println("You have run out of lives");
+                System.out.println("RIP Garfield");
+                contineGame = false;
+            }
+        }
+//        End of main loop
 
-//        cat2.giveBone(d1);
-//        cat1.giveBone(d2);
-//        cat1.giveBone(d1);
-//
-//        d2.chew();
-//        cat2.giveBone(d2);
-//        d2.chew();
-
-
-
-//        System.out.println(d1);
-//        System.out.println(d2);
-//        d2.talk();
-//        d1.talk();
-
-
-//        d1.receiveBone(bone);
-//
-//        cat2.talk();
-//        cat1.talk();
-//        cat2.talk();
-
-//
-//        bone.getChewed();
-//        bone.getChewed();
-//
-//        Display the objects
-//        System.out.println(bone);
+//        Goodbye message
+        System.out.println("Thanks for playing with us!!");
     }
 
 
