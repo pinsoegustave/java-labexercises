@@ -24,8 +24,9 @@ public class BasketballPlayer extends Player {
         return rebounds;
     }
 
+
     public String toString() {
-        return "This player "+getName()+" has "+points+" points with"+rebounds+" rebounds";
+        return "This player "+getName()+" with age "+getAge()+"yo,"+ "playing on position "+getPosition()+" has "+getPoints()+" points with "+getRebounds()+" rebounds";
     }
 
     public String checkPerformance() {
@@ -33,7 +34,7 @@ public class BasketballPlayer extends Player {
             return getName()+" needs more practice";
         }
 
-        return "";
+        return getName()+", Great Work ghee";
     }
 
 }

@@ -25,15 +25,20 @@ public class SoccerPlayer extends Player{
         return assists;
     }
 
+
+
     public String checkPerformance() {
         if (goals > 5) {
             return getName() + " need more practice";
         }
+        else{
+            return getName() + "Great work";
+        }
 
-        return "";
+//        return "";
     }
 
     public String toString() {
-        return "Name: "+getName()+" has "+goals+" with "+assists;
+        return "Name: "+getName()+" age "+getAge()+" Position "+ getPosition() + " has "+getGoals()+" goals with "+ getAssists()+ " assists";
     }
 }

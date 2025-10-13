@@ -4,7 +4,6 @@ public class Player {
         private int age;
         private String position;
 
-//        Constructor
     public Player() {
 
     }
@@ -23,6 +22,18 @@ public class Player {
 
     public String getPosition() {
         return position;
+    }
+
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    public void setAge(int newAge) {
+        age = newAge;
+    }
+
+    public void setPosition(String newPosition) {
+        position = newPosition;
     }
 
     public String toString() {
