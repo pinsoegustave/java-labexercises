@@ -43,7 +43,14 @@ public class Lab9 {
      * Output: 3
      */
     public static int countChar(String s, char c) {
-        return 0;
+        int counter = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == c) {
+                counter++;
+            }
+        }
+        return counter;
     }
     /**
      * Problem 4: Write a function that finds the first character in a string
