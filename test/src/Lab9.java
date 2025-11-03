@@ -11,7 +11,7 @@ public class Lab9 {
         char[] reversedString = new char[s.length];
         int j = 0;
 
-        for (int i = s.length -1; i >= 0; i--) {
+        for (int i = s.length-1; i >= 0; i--) {
             reversedString[j] = s[i];
             j++;
         }
@@ -27,7 +27,14 @@ public class Lab9 {
      * Output: 2
      */
     public static int findTargetIndex(int[] nums, int target) {
-        return 0;
+        int x;
+        Arrays.sort(nums);
+        for (x = 0; x <= nums.length; x++) {
+            if (nums[x] == target) {
+                return x;
+            }
+        }
+        return x;
     }
     /**
      * Problem 3: Write a function that takes a string s and character c
