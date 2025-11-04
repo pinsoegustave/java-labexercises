@@ -22,7 +22,14 @@ public class SortSearch {
         Arrays.sort(myNumbers);
 
         for (int x = 0; x <= myNumbers.length-1; x++) {
-            System.out.println(myNumbers[x]);
+
+//            System.out.println(myNumbers[x]);
+            if (myNumbers[x] > 28) {
+                System.out.println("yes there is an equal value");
+            }
+            else {
+                System.out.println("no");
+            }
         }
     }
 }
