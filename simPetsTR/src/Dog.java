@@ -37,7 +37,7 @@ public class Dog {
             System.out.println(name+": Thanks, but I already have one!");
             return false;
         }
-//        If we get here, the doesn't have one, Accept it
+//        If we get here, the dog doesn't have one, Accept it
         hasBone = true;
         bone = argBone;
         System.out.println(name + ": Thanks for the bone");
