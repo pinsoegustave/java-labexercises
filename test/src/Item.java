@@ -1,9 +1,11 @@
 public class Item {
+//    Instance variables
     private String name;
     private double basePrice;
     private int numSold;
     private double totalAmount;
 
+//    Constructor
     public Item (String argName, double argBasePrice) {
         name = argName;
         basePrice = argBasePrice;
@@ -11,6 +13,7 @@ public class Item {
         totalAmount = 0.0;
     }
 
+//    Buy method that will increment product quantity sold.
     public void buy() {
         numSold++;
 

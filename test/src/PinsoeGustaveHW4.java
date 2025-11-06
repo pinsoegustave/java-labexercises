@@ -15,13 +15,15 @@ public class PinsoeGustaveHW4 {
         product[8] = new Item("Webcam", 89.98);
         product[9] = new Item("Charger", 23.03);
 
+//        Outer loop which counts from 1 to 10
         for (int x = 1; x <= 10; x++ ) {
-
+//            Inner loop which goes through the items
             for (int y = 0; y < product.length; y++) {
                 product[y].buy();
             }
         }
 
+//        Printing each item after being bought
         for (int y = 0; y < product.length; y++) {
             System.out.println(product[y]);
         }
