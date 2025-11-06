@@ -10,7 +10,7 @@ public class Item {
         name = argName;
         basePrice = argBasePrice;
         numSold = 0;
-        totalAmount = 0.0;
+        totalAmount = 0;
     }
 
 //    Buy method that will increment product quantity sold.
