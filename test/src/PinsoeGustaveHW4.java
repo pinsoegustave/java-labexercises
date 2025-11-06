@@ -1,25 +1,29 @@
+
 public class PinsoeGustaveHW4 {
     public static void main(String[] args) {
 
-//        Testing my Item Class
-        Item ball = new Item("fifaa", 34.9);
-        Item cleats = new Item("nike", 87.45);
-        Item jersey = new Item("Adidas", 104.88);
+//        Create an array of 10 items
+        Item[] product =  new Item[10];
+        product[0] = new Item("Laptop", 980.99);
+        product[1] = new Item("Computer", 2330.12);
+        product[2] = new Item("Mouse", 23.55);
+        product[3] = new Item("Keyboard", 45.55);
+        product[4] = new Item("Monitor", 143.69);
+        product[5] = new Item("Headphones", 60.19);
+        product[6] = new Item("Tablet", 450.00);
+        product[7] = new Item("Smartphone", 670.04);
+        product[8] = new Item("Webcam", 89.98);
+        product[9] = new Item("Charger", 23.03);
 
-        ball.buy();
-        ball.buy();
-        ball.buy();
-        ball.buy();
-        System.out.println("After buying 4 balls: "+ ball);
+        for (int x = 1; x <= 10; x++ ) {
 
-        for (int i = 0; i < 5; i++) {
-            cleats.buy();
+            for (int y = 0; y < product.length; y++) {
+                product[y].buy();
+            }
         }
-        System.out.println(cleats);
 
-        for (int i = 0; i < 10; i++) {
-            jersey.buy();
+        for (int y = 0; y < product.length; y++) {
+            System.out.println(product[y]);
         }
-        System.out.println(jersey);
     }
 }
