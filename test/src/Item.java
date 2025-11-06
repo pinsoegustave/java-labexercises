@@ -23,7 +23,7 @@ public class Item {
     }
 
     public String toString() {
-        return String.format("%s: Number Sold (%d) Total Amount ($.2f)", name, numSold, totalAmount);
+        return String.format("%s: Number Sold (%d) Total Amount ($%.2f)", name, numSold, totalAmount);
     }
 
 //    Accessor methods
