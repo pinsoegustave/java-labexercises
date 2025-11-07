@@ -42,4 +42,8 @@ public class Item {
         return totalAmount;
     }
 
+    public int getNumSold() {
+        return numSold;
+    }
+
 }
