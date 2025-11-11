@@ -49,8 +49,11 @@ public class Exercises {
 
 //        Question 2:
         StringsPractice him = new StringsPractice();
+
         String result = him.beginToEnd("Excessive");
+        String second = him.endToBring("Characters");
 
         System.out.println(result);
+        System.out.println(second);
     }
 }

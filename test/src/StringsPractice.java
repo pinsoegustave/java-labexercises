@@ -6,4 +6,12 @@ public class StringsPractice {
 
         return getSecond + getFirst;
     }
+
+    public String endToBring(String str) {
+        int index = str.length() - 1;
+        String lastChar = str.substring(index);
+        String firstString = str.substring(0, index);
+
+        return lastChar + firstString;
+    }
 }
