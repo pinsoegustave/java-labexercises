@@ -55,5 +55,21 @@ public class Exercises {
 
         System.out.println(result);
         System.out.println(second);
+        System.out.println("===============================");
+
+//        Question 3:
+        int[] addArray = { 1, 2, 3, 4};
+        int[] subtractArray = {10, 2, 6, 9};
+
+        int[] firstAddArray = {5, 20};
+        int[] secondAddArray = {-4};
+
+        int sumOfArray = him.addSubtractArray(addArray, subtractArray);
+        System.out.println(sumOfArray);
+
+        System.out.println("=========================");
+
+        int result1 = him.addSubtractArray(firstAddArray, secondAddArray);
+        System.out.println(result1);
     }
 }
