@@ -46,5 +46,11 @@ public class Exercises {
         System.out.println(tmp);
         position = movie.indexOf("Money");
         System.out.println(position);
+
+//        Question 2:
+        StringsPractice him = new StringsPractice();
+        String result = him.beginToEnd("Excessive");
+
+        System.out.println(result);
     }
 }
