@@ -1,4 +1,5 @@
 public class PinsoeGustaveMovie {
+//    Instance variables
     private String title;
     private int releasedYear;
     private String rating;
@@ -16,81 +17,123 @@ public class PinsoeGustaveMovie {
     }
 
     private void parseMovieData(String movieData) {
-        String[] sections = split(movieData, ',');
+        int start = 0;
+        int end = 0;
 
-        for (String section : sections) {
-            if (section.length() == 0) continue;
+        // Process each section separated by commas
+        while (end < movieData.length()) {
+            // Find the next comma or end of string
+            end = findNextSeparator(movieData, start, ',');
+            String section = "";
+            if (end == -1) {
+                section = movieData.substring(start);
+                end = movieData.length();
+            } else {
+                section = movieData.substring(start, end);
+            }
 
             // Find the colon that separates section name from value
             int colonIndex = section.indexOf(':');
-            if (colonIndex == -1) continue;
+            if (colonIndex != -1) {
+                String sectionName = section.substring(0, colonIndex);
+                String sectionValue = section.substring(colonIndex + 1);
 
-            String sectionName = section.substring(0, colonIndex);
-            String sectionValue = section.substring(colonIndex + 1);
-
-            // Process each section based on its name
-            if (sectionName.equals("Title")) {
-                title = sectionValue;
-            } else if (sectionName.equals("Released")) {
-                releasedYear = Integer.parseInt(sectionValue);
-            } else if (sectionName.equals("Rating")) {
-                rating = sectionValue;
-            } else if (sectionName.equals("People")) {
-                parsePeople(sectionValue);
-            } else if (sectionName.equals("Genre")) {
-                parseGenres(sectionValue);
+                // Process each section based on its name
+                if (sectionName.equals("Title")) {
+                    title = sectionValue;
+                } else if (sectionName.equals("Released")) {
+                    releasedYear = stringToInt(sectionValue);
+                } else if (sectionName.equals("Rating")) {
+                    rating = sectionValue;
+                } else if (sectionName.equals("People")) {
+                    parsePeople(sectionValue);
+                } else if (sectionName.equals("Genre")) {
+                    parseGenres(sectionValue);
+                }
             }
+
+            start = end + 1;
+            if (start > movieData.length()) break;
         }
     }
 
-//    method to get people
     private void parsePeople(String peopleData) {
+        int start = 0;
+        int end = 0;
+        int peopleCount = 0;
+        String[] tempPeople = new String[20]; // Temporary storage
+
         // Split people by dash
-        String[] people = split(peopleData, '-');
+        while (end < peopleData.length()) {
+            end = findNextSeparator(peopleData, start, '-');
+            String person = "";
+            if (end == -1) {
+                person = peopleData.substring(start);
+                end = peopleData.length();
+            } else {
+                person = peopleData.substring(start, end);
+            }
+
+            tempPeople[peopleCount] = person;
+            peopleCount++;
+            start = end + 1;
+            if (start > peopleData.length()) break;
+        }
 
         // Director is always the last person
-        director = people[people.length - 1];
+        if (peopleCount > 0) {
+            director = tempPeople[peopleCount - 1];
+        }
 
-        // Stars are all people except the last one who is a director
-        int starCount = Math.min(people.length - 1, 10);
+        // Stars are all people except the last one (director)
+        int starCount = Math.min(peopleCount - 1, 10);
         for (int i = 0; i < starCount; i++) {
-            stars[i] = people[i];
+            stars[i] = tempPeople[i];
         }
     }
 
-//    method to get genres
     private void parseGenres(String genresData) {
-        // Split genres by dash
-        String[] genreArray = split(genresData, '-');
+        int start = 0;
+        int end = 0;
+        int genreCount = 0;
 
-        int genreCount = Math.min(genreArray.length, 5);
-        for (int i = 0; i < genreCount; i++) {
-            genres[i] = genreArray[i];
+        // Split genres by dash
+        while (end < genresData.length() && genreCount < 5) {
+            end = findNextSeparator(genresData, start, '-');
+            String genre = "";
+            if (end == -1) {
+                genre = genresData.substring(start);
+                end = genresData.length();
+            } else {
+                genre = genresData.substring(start, end);
+            }
+
+            genres[genreCount] = genre;
+            genreCount++;
+            start = end + 1;
+            if (start > genresData.length()) break;
         }
     }
 
-    // method to check separators
-    private String[] split(String str, char separator) {
-        // Count how many separators we have
-        int count = 1;
-        for (int i = 0; i < str.length(); i++) {
+    // method to find next separator
+    private int findNextSeparator(String str, int startIndex, char separator) {
+        for (int i = startIndex; i < str.length(); i++) {
             if (str.charAt(i) == separator) {
-                count++;
+                return i;
             }
         }
+        return -1; // Not found
+    }
 
-        String[] result = new String[count];
-        int currentIndex = 0;
-        int start = 0;
-
-        for (int i = 0; i <= str.length(); i++) {
-            if (i == str.length() || str.charAt(i) == separator) {
-                result[currentIndex] = str.substring(start, i);
-                currentIndex++;
-                start = i + 1;
+    //  method to convert String to int
+    private int stringToInt(String str) {
+        int result = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (c >= '0' && c <= '9') {
+                result = result * 10 + (c - '0');
             }
         }
-
         return result;
     }
 
