@@ -175,9 +175,35 @@ public class MagicSquare {
                 }
             }
         }
-
 //        This should never happen
         return "-1";
+    }
+
+//    This solves the board recursively
+    public boolean solved(int[][] argBoard) {
+//        See if the board is already solved
+        if (isSolved(argBoard)) return true;
+
+//        Get the first open square
+        String result = findFirstOpenSquare(argBoard);
+        int openRow = Integer.parseInt(result.substring(0, 1));
+        int openCol = Integer.parseInt(result.substring(1));
+
+//        Try each number in this box
+        for (int n = 1; n <= size*size; n++) {
+//            See if we can place it in this box
+            if (canNumberBePlaced(argBoard, openRow, openCol, n)) {
+//                Put it in the box
+                argBoard[openRow][openCol] = n;
+
+//                Try to solve this new board
+                boolean solveResult = solved(argBoard);
+
+                if (solveResult) return true;
+            }
+        }
+//        If we get here, no solution for the current board
+        return false;
     }
 
 }
