@@ -1,5 +1,4 @@
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -9,7 +8,6 @@ public class PinsoeGustaveHW5 {
         String[] sports = null;
         int[] playedCounts = null;
 
-        Scanner inputStream = null;
 
         try {
             File sportsFile = new File("sports.txt");
@@ -17,7 +15,6 @@ public class PinsoeGustaveHW5 {
 
 //            Read the number of sports in the file
             int numSports = Integer.parseInt(outputStream.nextLine());
-            outputStream = new Scanner(new FileInputStream("played.txt"));
             sports = new String[numSports];
 
 //            Read each sport name
@@ -52,8 +49,8 @@ public class PinsoeGustaveHW5 {
             outputStream.close();
 
         } catch (FileNotFoundException e) {
-            System.out.println("Error reading file");
-            System.exit(1);
+//            If the player file is missing or contains no data, Array should be empty. with played 0 times
+//            (Left blank) because if I add any code, they will run and stop the report from displaying that games were played 0 times.
         }
 
 //        Display results
