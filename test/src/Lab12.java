@@ -31,7 +31,12 @@ public class Lab12 {
      * Output: 10
      */
     public static int sumArray(int[] nums, int index) {
-        return 0;
+        int sum = 0;
+
+        for (int i = 0; i <= nums.length-1; i++) {
+            sum += nums[i];
+        }
+        return sum;
     }
     /**
      * Problem 4: Count the number of digits in a positive integer using recursion.
