@@ -44,7 +44,11 @@ public class Lab12 {
      * Output: 5
      */
     public static int countDigits(int n) {
-        return 0;
+
+        if (n < 10) {
+            return 1;
+        }
+        return 1+countDigits(n/10);
     }
 
 
