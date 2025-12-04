@@ -63,7 +63,7 @@ public class Vehicle {
     }
 
 //    Move to this new location
-    location = newLocation;
+//    location = newLocation;
 
 
 }
