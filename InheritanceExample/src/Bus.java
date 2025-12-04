@@ -5,6 +5,7 @@ public class Bus extends MotorVehicle{
 //        Then, this constructor runs
         capacity = 10;
         passengers = new Person[capacity];
+        name= "Mystery Machine";
     }
 
     //    This overrides the parent's method
