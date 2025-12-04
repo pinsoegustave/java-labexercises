@@ -31,4 +31,15 @@ public class MotorVehicle extends Vehicle {
         state = "OFF";
         System.out.println("The " + name+ " is now off");
     }
+
+//    This overrides the parent
+//    Add a check to make sure the vehicle is ON
+    public void goTo(String newLocation) {
+        if (state.equals("OFF")) {
+            System.out.println("The " + name+ "can't go anywhere because it si off");
+            return;
+        }
+//        Do everything that the parent's method does
+        super.goTo("HOME");
+    }
 }

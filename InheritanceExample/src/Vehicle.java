@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 public class Vehicle {
 //    Instance Variables
     protected Person[] passengers;
@@ -51,4 +53,17 @@ public class Vehicle {
 //        If we get here, the person was not found
         System.out.println(argPerson.getName() + "is not in the "+ name);
     }
+
+//    This causes the vehicle to go to the new location
+    public void goTo(String newLocation) {
+//        See if we are already at this location
+        System.out.println("The "+ name + "is already at the location");
+        return;
+
+    }
+
+//    Move to this new location
+    location = newLocation;
+
+
 }
