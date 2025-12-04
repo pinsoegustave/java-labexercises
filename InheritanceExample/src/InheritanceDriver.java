@@ -15,5 +15,10 @@ public class InheritanceDriver {
         System.out.println(moto);
         System.out.println(bus);
         System.out.println(bi);
+
+        car.start();
+        car.start();
+        car.stop();
+        car.stop();
     }
 }

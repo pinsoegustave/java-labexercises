@@ -8,8 +8,4 @@ public class Bus extends MotorVehicle{
         name= "Mystery Machine";
     }
 
-    //    This overrides the parent's method
-    public String toString() {
-        return "Bus: " + super.toString();
-    }
 }

@@ -7,8 +7,5 @@ public class Motorcycle extends MotorVehicle {
         passengers = new Person[capacity];
         name = "";
     }
-    //    This overrides the parent's method
-    public String toString() {
-        return "Motorcycle: " + super.toString();
-    }
+
 }

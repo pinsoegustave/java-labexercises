@@ -21,7 +21,7 @@ public class Vehicle {
             if (p != null) numPassengers++;
         }
 
-        String display = "Location: "+ location;
+        String display = name + " - Location: "+ location;
         display += "- # Passengers: "+ numPassengers + "/" + capacity;
 
         return display;

@@ -4,8 +4,5 @@ public class Bicycle extends Vehicle {
 //        The parent's constructor runs first
         name = "Schwin";
     }
-//    This overrides the parent's method
-    public String toString() {
-        return "Bicycle: " + super.toString();
-    }
+
 }
