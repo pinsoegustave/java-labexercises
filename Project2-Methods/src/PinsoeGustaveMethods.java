@@ -158,4 +158,16 @@ public class PinsoeGustaveMethods {
         return Arrays.toString(chars);
 
     }
+
+//    Bonus Qualification
+    public boolean bonusQualified(double minimumAverage, Player[] players) {
+        double sum = 0;
+
+        for (int i = 0; i < players.length; i++) {
+            sum = sum + players[i].getAverage();
+        }
+
+        double teamAverage = sum / players.length;
+        return teamAverage >= minimumAverage;
+    }
 }
