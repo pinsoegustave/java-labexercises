@@ -5,11 +5,12 @@ public class Main {
 
 //        Test Cases
         PinsoeGustaveMethods methods = new PinsoeGustaveMethods();
-
+//
 //        System.out.println(methods.canBuildFence(2, 1, 8));
 //        System.out.println(methods.canBuildFence(2, 1, 11));
 //        System.out.println(methods.canBuildFence(4, 2, 21));
 //        System.out.println(methods.canBuildFence(4, 2, 12));
+//        System.out.println(methods.canBuildFence(10, 3, 34));
 
 //        System.out.println(methods.middleOfAB("magic"));
 //        System.out.println(methods.middleOfAB("albqny"));
@@ -24,6 +25,8 @@ public class Main {
 //        System.out.println(methods.evilE("FLEX"));
 //        System.out.println(methods.evilE("bean"));
 //        System.out.println(methods.evilE("aaxEXbb"));
+//        System.out.println(methods.evilE("EEE"));
+//        System.out.println(methods.evilE("EXE"));
 
 //        String[] students = {"Alice", "Bob", "Carol", "Doug", "Ernie", "Fawn", "George", "Harry", "Isabella",
 //"Jessica"};
@@ -38,6 +41,7 @@ public class Main {
 //        System.out.println(methods.pickyCaptain(5,3,6,10));
 //        System.out.println(methods.pickyCaptain(6,3,5,9));
 //        System.out.println(methods.pickyCaptain(6,0,6,2));
+//        System.out.println(methods.pickyCaptain(6,7,5,5));
 
 //        System.out.println(methods.isSum(2, 5, 8));
 //        System.out.println(methods.isSum(5, 8, 3));
@@ -47,6 +51,7 @@ public class Main {
 //        System.out.println(methods.connectStrings("hello", "bad"));
 //        System.out.println(methods.connectStrings("you", "good"));
 //        System.out.println(methods.connectStrings("good", "game"));
+//        System.out.println(methods.connectStrings("abc", "four"));
 
 //        String[] myArray = {"a","b","c","d","c","b","b"};
 //        System.out.println(methods.formReversedString(myArray, 1));

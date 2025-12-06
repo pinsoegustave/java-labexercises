@@ -4,19 +4,17 @@ public class PinsoeGustaveMethods {
 
 //    Method 1: Return the median
     public int medianOf3(int a, int b, int c) {
-        boolean b1 = c <= b && b <= a;
-        if ((a <= b && b <= c) || (c <= b && b <= a)) {
-            return b;
-        } else if ((b <= a && a <= c) || (c <= a && a <= b)) {
-            return a;
-        }
-        else {
-            return c;
-        }
+//        Store the nums in the array for easy sorting
+        int[] nums = {a, b, c};
+//        Sort the elements of array, to be sure of the median
+        Arrays.sort(nums);
+
+        return nums[1];
     }
 
 //    Method 2: Check if the monkey is happy
     public boolean happyMonkey(int numBananas, boolean youThrow) {
+//        Condition to check for enough bananas when you throw
         if (youThrow) {
             return numBananas < 14;
         } else {
@@ -27,18 +25,19 @@ public class PinsoeGustaveMethods {
 //    Method 3: Form reverse string
     public String formReversedString(String[] letters, int n) {
         String result = "";
-
+//        Condition to check for the number is ready for the test
         if (n >= 0 && n < letters.length) {
             String skip = letters[n];
 
+//            Loop to go through the letters
             for (int i = letters.length - 1; i >= 0; i--) {
-                if (i != n && !letters[i].equals(skip)) {
-                    result = result + letters[i];
+                if (!letters[i].equals(skip)) {
+                    result += letters[i];
                 }
             }
         } else {
             for (int i = letters.length - 1; i >= 0; i--) {
-                result = result + letters[i];
+                result += letters[i];
             }
         }
 
@@ -51,7 +50,7 @@ public class PinsoeGustaveMethods {
         boolean secOddString = (str2.length() % 2 == 1);
 
         if (firstOddString && !secOddString) {
-            return str2.charAt(0) + str1 + str2.charAt(str2.length() - 1);
+            return "" + str2.charAt(0) + str1 + str2.charAt(str2.length() - 1);
         } else if (firstOddString && secOddString) {
             char middleChar = str2.charAt(str2.length() / 2);
             return ""+ str1.charAt(0) + middleChar + str1.charAt(str1.length() - 1);
@@ -92,9 +91,7 @@ public class PinsoeGustaveMethods {
 
 //    Method 7: Count Multiples
     public int countMultiples(int n) {
-        if (n == 0) {
-            return 0;
-        }
+        if (n == 0) return 0;
 
         int count = 0;
         for (int i = 1; i <= 100; i++) {
@@ -108,16 +105,18 @@ public class PinsoeGustaveMethods {
 //    Method 8: Club Formation
     public String[] formClub(String[] students,int n) {
         String[] club = new String[3];
+
+//        President on the first position
         club[0] = students[n];
 
-//        Vice President
+//        Vice President on person two
         int vpIndex = n - 2;
         if (vpIndex < 0) {
             vpIndex = vpIndex + students.length;
         }
         club[1] = students[vpIndex];
 
-//        Treasurer
+//        Treasurer on person three position
         int treasIndex = (n + 3) % students.length;
         club[2] = students[treasIndex];
 
@@ -126,8 +125,9 @@ public class PinsoeGustaveMethods {
 
 //    Method 9: Evil E
     public String evilE(String str) {
+//        condition to check for E in a string
         int indexE = str.indexOf('E');
-
+//        Condition to check if there is no E
         if (indexE == -1) return str;
 
         char[] chars = str.toCharArray();
@@ -161,10 +161,10 @@ public class PinsoeGustaveMethods {
 
 //    Method 10: Bonus Qualification
     public boolean bonusQualified(double minimumAverage, Player[] players) {
-        double sum = 0;
+        double sum = 0.0;
 
         for (int i = 0; i < players.length; i++) {
-            sum = sum + players[i].getAverage();
+            sum += players[i].getAverage();
         }
 
         double teamAverage = sum / players.length;
@@ -174,7 +174,7 @@ public class PinsoeGustaveMethods {
 //    Bonus Questions
 //    Method 11: Find a middle in a and b
     public String middleOfAB(String str) {
-        for (int i = 0; i < str.length() - 2; i ++) {
+        for (int i = 0; i < str.length() - 2; i++) {
             if (str.charAt(i) == 'a' && str.charAt(i + 2) == 'b') {
                 char middle = str.charAt(i + 1);
                 char[] chars = str.toCharArray();
@@ -190,18 +190,15 @@ public class PinsoeGustaveMethods {
 
 //    Method 12: Can Build a Fence
     public boolean canBuildFence(int numSmall, int numBig, int goal) {
-        for (int usedBig = 0; usedBig <= numBig; usedBig++) {
-            int remaining = goal - (usedBig * 11);
+        int maxBigUse = Math.min(numBig, goal / 11);
 
-            if (remaining >= 0) {
-                for (int usedSmall = 0; usedSmall <= numSmall; usedSmall++) {
-                    if (usedSmall * 3 == remaining) {
-                        return true;
-                    }
-                }
+        for (int usedBig = maxBigUse; usedBig >= 0; usedBig--) {
+            int remaining = goal - usedBig * 11;
+            if (remaining % 3 == 0) {
+                int needSmall = remaining / 3;
+                if (needSmall <= numSmall) return true;
             }
         }
-
         return false;
     }
 }
