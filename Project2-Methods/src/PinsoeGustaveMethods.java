@@ -73,4 +73,33 @@ public class PinsoeGustaveMethods {
         }
     }
 
+//    Method 6: Picky Captain
+    public String pickyCaptain(int youFeet, int youInches, int friendFeet, int friendInches) {
+        int youTotal = youFeet * 12 + youInches;
+        int friendTotal = friendFeet * 12 + friendInches;
+
+        if (youTotal >= 70 || friendTotal >= 70) {
+            return "yes";
+        }
+        if (youTotal <= 69 || friendTotal <= 69) {
+            return "no";
+        }
+
+        return "maybe";
+    }
+
+//    Method 7: Count Multiples
+    public int countMultiples(int n) {
+        if (n == 0) {
+            return 0;
+        }
+
+        int count = 0;
+        for (int i = 1; i <= 100; i++) {
+            if (i % n == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
