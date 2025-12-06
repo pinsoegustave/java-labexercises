@@ -80,7 +80,7 @@ public class PinsoeGustaveMethods {
         int youTotal = youFeet * 12 + youInches;
         int friendTotal = friendFeet * 12 + friendInches;
 
-        if (youTotal >= 70 || friendTotal >= 70) {
+        if (youTotal >= 78 || friendTotal >= 78) {
             return "yes";
         }
         if (youTotal <= 69 || friendTotal <= 69) {
@@ -118,7 +118,7 @@ public class PinsoeGustaveMethods {
         club[1] = students[vpIndex];
 
 //        Treasurer
-        int treasIndex = (n % 3) % students.length;
+        int treasIndex = (n + 3) % students.length;
         club[2] = students[treasIndex];
 
         return club;
@@ -138,7 +138,7 @@ public class PinsoeGustaveMethods {
             if (rightChar != 'X' && rightChar != 'x') {
                 chars[indexE + 1] = 'E';
                 chars[indexE] = ' ';
-                return Arrays.toString(chars);
+                return new String(chars);
             }
         }
 
@@ -148,14 +148,14 @@ public class PinsoeGustaveMethods {
             if (leftChar != 'X' && leftChar != 'x') {
                 chars[indexE - 1] = 'E';
                 chars[indexE] = ' ';
-                return Arrays.toString(chars);
+                return new String(chars);
             }
         }
 
 //       When we reach here, the Evil E will be trapped in the middle.
 //       Replace it with a space
         chars[indexE] = ' ';
-        return Arrays.toString(chars);
+        return new String(chars);
 
     }
 
@@ -181,7 +181,7 @@ public class PinsoeGustaveMethods {
                 chars[i] = middle;
                 chars[i+2] = middle;
 
-                return Arrays.toString(chars);
+                return new String(chars);
             }
         }
 
