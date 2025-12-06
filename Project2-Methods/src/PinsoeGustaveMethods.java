@@ -159,7 +159,7 @@ public class PinsoeGustaveMethods {
 
     }
 
-//    Bonus Qualification
+//    Method 10: Bonus Qualification
     public boolean bonusQualified(double minimumAverage, Player[] players) {
         double sum = 0;
 
@@ -169,5 +169,39 @@ public class PinsoeGustaveMethods {
 
         double teamAverage = sum / players.length;
         return teamAverage >= minimumAverage;
+    }
+
+//    Bonus Questions
+//    Method 11: Find a middle in a and b
+    public String middleOfAB(String str) {
+        for (int i = 0; i < str.length() - 2; i ++) {
+            if (str.charAt(i) == 'a' && str.charAt(i + 2) == 'b') {
+                char middle = str.charAt(i + 1);
+                char[] chars = str.toCharArray();
+                chars[i] = middle;
+                chars[i+2] = middle;
+
+                return Arrays.toString(chars);
+            }
+        }
+
+        return str;
+    }
+
+//    Method 12: Can Build a Fence
+    public boolean canBuildFence(int numSmall, int numBig, int goal) {
+        for (int usedBig = 0; usedBig <= numBig; usedBig++) {
+            int remaining = goal - (usedBig * 11);
+
+            if (remaining >= 0) {
+                for (int usedSmall = 0; usedSmall <= numSmall; usedSmall++) {
+                    if (usedSmall * 3 == remaining) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 }
