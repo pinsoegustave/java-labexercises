@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class PinsoeGustaveMethods {
 
 //    Method 1: Return the median
@@ -101,5 +103,59 @@ public class PinsoeGustaveMethods {
             }
         }
         return count;
+    }
+
+//    Method 8: Club Formation
+    public String[] formClub(String[] students,int n) {
+        String[] club = new String[3];
+        club[0] = students[n];
+
+//        Vice President
+        int vpIndex = n - 2;
+        if (vpIndex < 0) {
+            vpIndex = vpIndex + students.length;
+        }
+        club[1] = students[vpIndex];
+
+//        Treasurer
+        int treasIndex = (n % 3) % students.length;
+        club[2] = students[treasIndex];
+
+        return club;
+    }
+
+//    Method 9: Evil E
+    public String evilE(String str) {
+        int indexE = str.indexOf('E');
+
+        if (indexE == -1) return str;
+
+        char[] chars = str.toCharArray();
+
+//        Check on the right side
+        if (indexE < chars.length - 1) {
+            char rightChar = chars[indexE + 1];
+            if (rightChar != 'X' && rightChar != 'x') {
+                chars[indexE + 1] = 'E';
+                chars[indexE] = ' ';
+                return Arrays.toString(chars);
+            }
+        }
+
+//        Check on the left side
+        if (indexE > 0) {
+            char leftChar = chars[indexE - 1];
+            if (leftChar != 'X' && leftChar != 'x') {
+                chars[indexE - 1] = 'E';
+                chars[indexE] = ' ';
+                return Arrays.toString(chars);
+            }
+        }
+
+//       When we reach here, the Evil E will be trapped in the middle.
+//       Replace it with a space
+        chars[indexE] = ' ';
+        return Arrays.toString(chars);
+
     }
 }
