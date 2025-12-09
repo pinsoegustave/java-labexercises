@@ -14,6 +14,8 @@ public class Game extends JComponent implements KeyListener, MouseListener
 	//instance variables
 	private int width;
 	private int height;
+	private Rectangle rectangle;
+	private Circle circle;
  
 	//Default Constructor
 	public Game()
@@ -35,18 +37,24 @@ public class Game extends JComponent implements KeyListener, MouseListener
 		gui.setVisible(true); //Makes the frame visible
 		gui.addKeyListener(this); // Allows for keyboard input
 		gui.addMouseListener(this); // Allows for mouse input
+
+//		Create all objects
+		rectangle = new Rectangle(this, 100, 50, 40, 80);
+		circle = new Circle(this, 300, 200, 25);
 	}
 	
 	// This is where all variables will be updated before redrawing.
 	public void tick()
 	{
-		
+		rectangle.tick();
+		circle.tick();
 	}
 	
 	// This will draw the screen
 	public void render(Graphics g)
 	{
-		
+		rectangle.render(g);
+		circle.render(g);
 	}
 	
 	// This is run automatically when a repaint() method is called in the loop below.
@@ -55,7 +63,21 @@ public class Game extends JComponent implements KeyListener, MouseListener
 		// Render all objects
 		render(g);
 	}
-	
+
+	@Override
+	public int getWidth() {
+		return width;
+	}
+
+	@Override
+	public int getHeight() {
+		return height;
+	}
+
+	public Rectangle getRectangle() {
+		return rectangle;
+	}
+
 	public void loop()
 	{
 		// Tick all objects
@@ -70,12 +92,15 @@ public class Game extends JComponent implements KeyListener, MouseListener
 	// They get triggered automatically when a keyboard or mouse event occurs
 	public void keyPressed(KeyEvent e) 
 	{
+//		Tell the rectangle
+		rectangle.keyPressed(e);
 	} 
 	public void keyTyped(KeyEvent e) 
 	{
 	}
 	public void keyReleased(KeyEvent e) 
 	{
+		rectangle.keyReleased(e);
 	}
 	public void mousePressed(MouseEvent e)
 	{
