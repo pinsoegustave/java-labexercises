@@ -16,17 +16,18 @@ public class PinsoeGustaveComplexNumber {
 
 //    Printing methods
     public String toString() {
+//        Check for 0.0 to return 0.0
         if (a == 0.0 && b == 0.0) {
             return "0";
         }
-
+//        check for 0 on imaginary part to return only real part
         if (b == 0.0) {
             if (a == (int)a) {
-                return Integer.toString((int)a);
+                return ""+((int)a);
             }
-            return Double.toString(a);
+            return ""+a;
         }
-
+//        check for the 0 value on real part to return only imaginary part
         if (a == 0.0) {
             String imagPart;
             if (b == 1.0) {
@@ -41,13 +42,14 @@ public class PinsoeGustaveComplexNumber {
             return imagPart;
         }
 
+//       returning full complex number
         String realPart;
         String imagPart;
 
         if (a == (int)a) {
-            realPart = Integer.toString((int)a);
+            realPart = ""+(int)a;
         } else {
-            realPart = Double.toString(a);
+            realPart = ""+(a);
         }
 
         if (b > 0) {
@@ -105,9 +107,10 @@ public class PinsoeGustaveComplexNumber {
             return new PinsoeGustaveComplexNumber(a, b);
         }
 
-        return this.times(this.toThePowerOf(e - 1));
+        return times(toThePowerOf(e - 1));
     }
 
+//    Accessor Methods
     public double getA() {
         return a;
     }
